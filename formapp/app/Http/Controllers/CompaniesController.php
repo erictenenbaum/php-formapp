@@ -117,7 +117,7 @@ class CompaniesController extends Controller
             $db_customer[0]->company_id = $db_company_id;
             $db_customer[0]->save();
 
-            return views('pages.formsuccess');
+            return view('pages.formsuccess');
             
         }
         else{
