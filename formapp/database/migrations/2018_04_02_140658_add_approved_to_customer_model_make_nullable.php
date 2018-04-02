@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddUserIdToCompanies extends Migration
+class AddApprovedToCustomerModelMakeNullable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class AddUserIdToCompanies extends Migration
      */
     public function up()
     {
-        //Add user id to companies
-        Schema::table('companies', function($table){
-            $table->integer('user_id');
+        //
+        Schema::table('customers', function($table){
+            $table->boolean('approved')->nullable();
+            $table->boolean('denied')->nullable();
         });
     }
 
@@ -27,7 +28,8 @@ class AddUserIdToCompanies extends Migration
     public function down()
     {
         Schema::table('customers', function($table){
-            $table->dropColumn('user_id');
+            $table->dropCollumn('approved');
+            $table->dropCollumn('denied');
         });
     }
 }

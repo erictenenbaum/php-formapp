@@ -24,6 +24,10 @@ class CreateCompaniesTable extends Migration
             $table->string('invoice');
             $table->timestamps();
         });
+
+    //     Schema::table('companies', function($table){
+    //         $table->string('user_id')->nullable()->change();
+    //    });
     }
 
     /**

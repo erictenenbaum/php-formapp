@@ -7,4 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Company extends Model
 {
     //
+
+  
+
+  public function customers(){
+    return $this->hasMany('App\Customer');
+ }
+
+  
 }

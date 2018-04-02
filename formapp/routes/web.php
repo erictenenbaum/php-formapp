@@ -24,14 +24,6 @@ Route::get('/dashboard', 'PagesController@dashboard');
 Route::resource('customer', 'CustomersController');
 Route::resource('company', 'CompaniesController');
 
-// Captcha Verify
-// Route::post('https://www.google.com/recaptcha/api/siteverify', 'CustomerController@captcha');
-
-
-
-
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

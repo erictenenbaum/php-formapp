@@ -9,7 +9,7 @@
 </div>
       <div class="container">   
     <h1>Company Information (2/2)</h1>
-    {!! Form::open(['action' => 'CompaniesController@store', 'method' => 'POST']) !!}
+    {!! Form::open(['action' => 'CompaniesController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
         <div class="form-row">
             <div class="form-group col-md-6">
                 {{Form::label('company-name', 'Company Name')}}
@@ -33,7 +33,7 @@
             </div>
             <div class="form-group col-md-4">
                 {{Form::label('company-state', 'State')}}
-                {{Form::select('customer-state', ['Alabama' => 'Alabama', 'Alaska' => 'Alaska', 
+                {{Form::select('company-state', ['Alabama' => 'Alabama', 'Alaska' => 'Alaska', 
                     'Arizona' => 'Arizona',
                     'Arkansas' => 'Arkansas',
                     'California' => 'California',
@@ -88,6 +88,10 @@
                     {{Form::label('company-zip', 'Zip')}}
                     {{Form::text('company-zip', '', ['class' => 'form-control', 'placeholder' => '12345'])}}  
             </div>
+        </div>
+        <h3>Invoice</h3>
+        <div class='form-group'>
+            {{Form::file('invoice')}}
         </div>
             <br>
                 <div class="g-recaptcha" data-sitekey="6LdsNFAUAAAAAHw3E7k4CFBIHx3ZVpJOhCvaRlz4"></div> 
